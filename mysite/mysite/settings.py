@@ -137,3 +137,7 @@ EMAIL_USE_TLS = True
 
 TAGGIT_CASE_INSENSITIVE = True
 TAGGIT_LIMIT = 50
+
+LOGIN_REDIRECT_URL = 'account:dashboard' # url에 설정된 Name
+LOGIN_URL = 'account:login'
+LOGOUT_URL = 'account:logout'
