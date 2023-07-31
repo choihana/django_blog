@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 from .forms import LoginForm, UserRegistrationForm
+from .models import Profile
 
 
 # Create your views here.
@@ -46,6 +47,9 @@ def register(request):
                 user_form.cleaned_data['password']
             )
             new_user.save()
+
+            #new_user로 profile 객체 생성
+            Profile.objects.create(user=new_user)
             return render(request,
                           'account/register_done.html',
                           {'new_user':new_user})
