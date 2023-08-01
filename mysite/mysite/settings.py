@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-dwh17yfji8!_6yem$&kxp*#nqxz=0b34x536ac_9oq97&^zzd0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'taggit.apps.TaggitAppConfig',
     'taggit_templatetags2',
     'social_django',
+    'django_extensions',
 
 ]
 
@@ -154,3 +155,13 @@ TAGGIT_LIMIT = 50
 LOGIN_REDIRECT_URL = 'dashboard' # url에 설정된 Name
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
+
+#인증
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'social_core.backends.google.GoogleOAuth2',
+]
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '565308545721-7ilpggn1ett34cqpjf10l5d0fvps5gm0.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
