@@ -23,7 +23,7 @@ class Contact(models.Model):
 
 
     class Meta:
-        indexed = [
+        indexes = [
             models.Index(fields=['-created']),
         ]
         ordering = ['-created']
