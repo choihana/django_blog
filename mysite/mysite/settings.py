@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'social_django',
     'django_extensions',
     'images.apps.ImagesConfig',
+    'actions.apps.ActionsConfig',
 
 ]
 
@@ -174,3 +175,7 @@ ABSOLUTE_URL_OVERRIDES =  {
 }
 
 THUMBNAIL_DEBUG = True
+
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379
+REDIS_DB = 0
